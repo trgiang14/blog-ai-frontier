@@ -45,63 +45,60 @@
     </section>
 
     <!-- Featured Posts -->
+
     <div class="container">
         <h2 class="section-title">Bài Viết Nổi Bật</h2>
-        <div class="featured-posts">
-            <!-- Post 1 -->
-            <div class="post-card">
-                <div class="post-image">
-                    <img src="https://via.placeholder.com/600x400?text=Laravel+Tips" alt="Trí tuệ nhân tạo">
-                </div>
-                <div class="post-content">
-                    <div class="post-meta">
-                        <span>13 Tháng 10, 2025</span>
-                        <span>13 Tháng 10, 2025 · 6 phút đọc</span>
+        @foreach ($post as $postItem)
+            <div class="featured-posts">
+                <!-- Post 1 -->
+                <div class="post-card">
+                    <div class="post-image">
+                        <img src="img/{{ $postItem->image }}" alt="Trí tuệ nhân tạo">
                     </div>
-                    <h3 class="post-title">Cách AI đang thay đổi công việc sáng tạo</h3>
-                    <p class="post-excerpt">Khám phá cách các công cụ như ChatGPT hay Midjourney đang định hình lại cách
-                        con người viết, thiết kế và sáng tạo nội dung.
-                    </p>
-                    <a href="/post/10-laravel-tips" class="read-more">Đọc tiếp →</a>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span> {{ $postItem->created_at }} </span>
+                        </div>
+                        <h3 class="post-title"> {{ $postItem->title }} </h3>
+                        <p class="post-excerpt">{{ Str::limit($postItem->description, 100) }}...
+                        </p>
+                        <a href="{{ route('fullpost', $postItem->id) }}" class="read-more">Đọc tiếp →</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Post 2 -->
-            <div class="post-card">
-                <div class="post-image">
-                    <img src="https://via.placeholder.com/600x400?text=Laravel+Tips" alt="Trí tuệ nhân tạo">
-                </div>
-                <div class="post-content">
-                    <div class="post-meta">
-                        <span>13 Tháng 10, 2025</span>
-                        <span>13 Tháng 10, 2025 · 6 phút đọc</span>
+                <!-- Post 2 -->
+                <div class="post-card">
+                    <div class="post-image">
+                        <img src="img/{{ $postItem->image }}" alt="Trí tuệ nhân tạo">
                     </div>
-                    <h3 class="post-title">Cách AI đang thay đổi công việc sáng tạo</h3>
-                    <p class="post-excerpt">Khám phá cách các công cụ như ChatGPT hay Midjourney đang định hình lại cách
-                        con người viết, thiết kế và sáng tạo nội dung.
-                    </p>
-                    <a href="/post/10-laravel-tips" class="read-more">Đọc tiếp →</a>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span> {{ $postItem->created_at }} </span>
+                        </div>
+                        <h3 class="post-title"> {{ $postItem->title }} </h3>
+                        <p class="post-excerpt">{{ Str::limit($postItem->description, 100) }}...
+                        </p>
+                        <a href="{{ route('fullpost', $postItem->id) }}" class="read-more">Đọc tiếp →</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Post 3 -->
-            <div class="post-card">
-                <div class="post-image">
-                    <img src="https://via.placeholder.com/600x400?text=Laravel+Tips" alt="Trí tuệ nhân tạo">
-                </div>
-                <div class="post-content">
-                    <div class="post-meta">
-                        <span>13 Tháng 10, 2025</span>
-                        <span>13 Tháng 10, 2025 · 6 phút đọc</span>
+                <!-- Post 3 -->
+                <div class="post-card">
+                    <div class="post-image">
+                        <img src="img/{{ $postItem->image }}" alt="Trí tuệ nhân tạo">
                     </div>
-                    <h3 class="post-title">Cách AI đang thay đổi công việc sáng tạo</h3>
-                    <p class="post-excerpt">Khám phá cách các công cụ như ChatGPT hay Midjourney đang định hình lại cách
-                        con người viết, thiết kế và sáng tạo nội dung.
-                    </p>
-                    <a href="/post/10-laravel-tips" class="read-more">Đọc tiếp →</a>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span> {{ $postItem->created_at }} </span>
+                        </div>
+                        <h3 class="post-title"> {{ $postItem->title }} </h3>
+                        <p class="post-excerpt">{{ Str::limit($postItem->description, 100) }}...
+                        </p>
+                        <a href="{{ route('fullpost', $postItem->id) }}" class="read-more">Đọc tiếp →</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        @endforeach
 
         <!-- Categories -->
         <h2 class="section-title">Danh mục</h2>
@@ -154,7 +151,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 AI Frontier. All rights reserved. Built with Laravel.</p>
+                <p>&copy; 2025 AI Frontier. All rights reserved. Built with Laravel.</p>
             </div>
         </div>
     </footer>
